@@ -1,207 +1,83 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KR Daily Newsletter</title>
-    <style>
-        :root {
-            --bg-color: #ffffff;
-            --text-color: #222;
-            --link-color: #0366d6;
-            --border-color: #d0d7de;
-            --table-header-bg: #374151;
-            --table-header-text: #fff;
-            --table-row-even: #eaf4ff;
-            --table-row-odd: #fff;
-            --button-bg: #0366d6;
-            --button-text: #fff;
-        }
-        [data-theme="dark"] {
-            --bg-color: #181a1b;
-            --text-color: #e0e0e0;
-            --link-color: #82b1ff;
-            --border-color: #333a42;
-            --table-header-bg: #222c36;
-            --table-header-text: #fff;
-            --table-row-even: #263445;
-            --table-row-odd: #181a1b;
-            --button-bg: #222c36;
-            --button-text: #e0e0e0;
-        }
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Roboto', Arial, Helvetica, sans-serif;
-            line-height: 1.6;
-            transition: all 0.3s ease;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            cursor: pointer;
-            padding: 10px 20px;
-            background: var(--button-bg);
-            color: var(--button-text);
-            border: none;
-            border-radius: 25px;
-            font-size: 14px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-        }
-        .header {
-            text-align: center;
-            padding: 40px 0 20px 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .logo {
-            width: 100%;
-            max-width: 320px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-        .content-section {
-            padding: 30px 0 0 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .event-box {
-            border: 1px dotted var(--border-color);
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
-        }
-        a {
-            color: var(--link-color);
-            text-decoration: none;
-        }
-        /* 표 반응형 부모 */
-        .table-responsive {
-            width: 100%;
-            overflow-x: auto;
-            margin: 0 auto 30px auto;
-        }
-        /* 표 스타일 */
-        table {
-            width: 100%;
-            min-width: 400px;
-            border-collapse: collapse;
-            margin: 30px 0 10px 0;
-            font-size: 15px;
-        }
-        th, td {
-            padding: 14px 10px;
-            text-align: left;
-            border-bottom: 1px solid var(--border-color);
-            word-break: break-all;
-        }
-        th {
-            background: var(--table-header-bg);
-            color: var(--table-header-text);
-            font-size: 16px;
-            letter-spacing: 1px;
-        }
-        tr:nth-child(even) td {
-            background: var(--table-row-even);
-        }
-        tr:nth-child(odd) td {
-            background: var(--table-row-odd);
-        }
-        tr:hover td {
-            background: #f5faff;
-        }
-        [data-theme="dark"] tr:hover td {
-            background: #1e2633;
-        }
-        .footer {
-            text-align: center;
-            padding: 40px 0 0 0;
-        }
-        .cta-button {
-            display: inline-block;
-            padding: 15px 30px;
-            background: var(--button-bg);
-            color: var(--button-text);
-            border-radius: 50px;
-            margin: 20px 0;
-            font-size: 16px;
-        }
-        @media (max-width: 600px) {
-            .container {
-                padding: 10px;
-            }
-            .theme-toggle {
-                top: 10px;
-                right: 10px;
-                padding: 8px 16px;
-            }
-            .logo {
-                max-width: 100%;
-            }
-            .event-box {
-                font-size: 14px;
-                padding: 12px;
-            }
-            table {
-                font-size: 13px;
-                min-width: 340px;
-            }
-            th, td {
-                padding: 10px 5px;
-            }
-            .cta-button {
-                width: 90%;
-                padding: 12px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <button class="theme-toggle" onclick="toggleTheme()">🌓 테마 변경</button>
-    <div class="container">
-        <header class="header">
-            <a href="https://sites.google.com/broadcom.com/vcf-ranger-wiki">
-                <img src="https://i.imgur.com/G1pO9yp.png" alt="KR VCF Portal" class="logo">
-            </a>
-        </header>
-        <div class="content-section">
-            <div style="margin: 20px 0; font-size: 18px;">
-                안녕하세요. 관심 키워드별 국내 뉴스 검색 결과를 정리해주는 Daily News Letter입니다.
-            </div>
-            <br>
-            <!-- end term -->
-            <!-- 지수정보 -->
-            <br>
-            <!-- CVE -->
-            <br>
-            <!-- 이벤트 시작 -->
-            <div class="event-box">
-                <b>📅 Upcoming Events:</b><br>
-                2025-08-25(월) | <a href="https://blogs.vmware.com/explore/2024/08/29/save-the-date-for-vmware-explore-2025-las-vegas/">VMware Explore 2025 Las Vegas</a><br>
-                2025-04-30(수) | VKS SME그룹 Premier 파트너사 오프라인 미팅 @ 에티버스타워 21층 중강당 (10:00-12:00)<br>
-                2025-04-16(수) | <a href="https://docs.google.com/forms/d/e/1FAIpQLScES5i_sKtKg8qgt6AZh3y1xGZxaLDLieTbuL52On0eFmsonQ/viewform">Partner Engineer Bootcamp</a><br>
-                2025-03-27(목) | <a href="https://www.facebook.com/share/p/1PwkxcMdQ7/">VMUG Seoul</a> | <a href="https://brcm.tech/vmugseoulvault">세션 자료</a>
-            </div>
-            <div style="text-align: center; padding: 20px 0;">
-                <a href="https://sites.google.com/broadcom.com/vcf-ranger-wiki">KR VCF Portal</a> | 
-                <a href="https://sites.google.com/broadcom.com/vcf-ranger-wiki/internal-pages/pnp-deck-vcfbu-update">PnP Deck</a> | 
-                <a href="https://sites.google.com/broadcom.com/vcf-ranger-wiki/internal-pages/pnp-faq-deck-vcfbu">PnP FAQ Deck</a><br>
-                <a href="https://sites.google.com/broadcom.com/vcf-ranger-wiki/korea-team/gs-update/broadcom-support-portal">Support Portal 메뉴얼</a> | 
-                <a href="https://sites.google.com/broadcom.com/vcf-ranger-wiki/korea-team/employee-guide/hr-benefits">HR Benefits</a><br>
-                <a href="https://e-hrok.co.kr">연말정산</a> | 
-                <a href="https://sites.google.com/broadcom.com/vcf-ranger-wiki/internal-pages/global-sites">Global Site Link</a>
-            </div>
-            <!-- 뉴스 컨텐츠 영역 -->
-            <div class="table-responsive" style="margin-top: 40px;">
-                
+<div style="width:100%">
+
+  <div style="max-width:600px;margin:0 auto;padding:0px 0 10px 0;font-family:'Roboto',Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;border:1px solid #e2e2e2">
+
+    <div align="center" style="padding-right:0px;padding-left:0px" class="logo-area">
+      <div style="font-size:1px;line-height:20px">&nbsp;</div><a href="https://sites.google.com/broadcom.com/vcf-ranger-wiki" style="outline:none" target="_blank"> <img align="center" border="0" src="https://i.imgur.com/G1pO9yp.png" alt="Logo" title="KR Daily Newsletter" style="text-decoration-line: none; height: auto; border: none; width: 100%; max-width: 600px; display: block;" width="143"></a>
+    </div>
+
+    <hr style="border:0;border-top:solid 1px #e2e2e2;width:90%;margin:5px auto" class="horizontal-line" />
+    <!-- end term -->
+
+    <div style="max-width:90%;margin-left:auto;margin-right:auto;margin-top:20px" class="nomal-paragraph">
+      <div style="margin-top:20px">
+        안녕하세요. 관심 키워드별 국내 뉴스 검색 결과를 정리해주는<br> Daily News Letter입니다.
+      </div>
+      <br>
+      <!-- end term -->
+      
+    <div style="display: flex; justify-content: center; padding: 10px;">
+        <div style="border:1px dotted; border-radius:0.1em; padding:10px; font-size: 10px; width: 48%; text-align: center;">
+    원/달러: 1,423.40 (<span style="color: red;">▲ 4.50(0.32%)</span>)<br>엔/달러: 142.34 (<span style="color: blue;">▼ 0.03(0.02%)</span>)<br>원/엔: 10.00 (<span style="color: red;">▲ 0.05(0.52%)</span>)<br>원/유로: 1,621.15 (<span style="color: red;">▲ 9.30(0.58%)</span>)<br>
+        </div>
+        <div style="border:1px dotted; border-radius:0.1em; padding:10px; font-size: 10px; width: 48%; text-align: center;">
+    코스피 종합: 2,483.42 (<span style="color: red;">▲ 13.01(0.53%)</span>)<br>코스닥 종합: 717.77 (<span style="color: red;">▲ 6.02(0.85%)</span>)<br>다우 산업: 39,142.23 (<span style="color: blue;">▼ 527.16(1.33%)</span>)<br>나스닥 종합: 16,286.45 (<span style="color: blue;">▼ 20.71(0.13%)</span>)<br>
+        </div>
+    </div>
+    <div style="border:1px dotted; padding:10px; font-size: 12px;"><b>최신 블로그 포스트:</b><br>2025-04-17 | <a href="https://blogs.vmware.com/cloud-foundation/2025/04/17/broadcom-delivers-near-bare-metal-performance-for-virtualized-ai-ml/" target="_blank">Broadcom은 가상화 된 AI/ML에 대한 베어 메탈 성능을 제공합니다</a> (<a href="https://blogs.vmware.com/cloud-foundation/" target="_blank">Cloud Foundation</a>)<br>2025-04-17 | <a href="https://blogs.vmware.com/cloud-foundation/2025/04/17/how-a-customer-saved-over-37m-with-a-vcf-technical-adoption-manager-and-vcf-professional-services/" target="_blank">고객이 VCF 기술 입양 관리자 및 VCF 전문 서비스로 3,700 만 달러 이상을 절약 한 방법</a> (<a href="https://blogs.vmware.com/cloud-foundation/" target="_blank">Cloud Foundation</a>)<br>2025-04-17 | <a href="https://blogs.vmware.com/cloud-foundation/2025/04/17/vmware-vsphere-foundation-adds-vsan-capacity/" target="_blank">VMware vsphere Foundation은 VSAN 용량을 추가합니다</a> (<a href="https://blogs.vmware.com/cloud-foundation/" target="_blank">Cloud Foundation</a>)<br>2025-04-17 | <a href="https://blogs.vmware.com/tanzu/scalable-agentic-applications-with-model-context-protocol-mcp/" target="_blank">모델 컨텍스트 프로토콜 (MCP)을 사용한 확장 가능한 에이전트 응용 프로그램</a> (<a href="https://blogs.vmware.com/tanzu/" target="_blank">Tanzu</a>)<br>2025-04-17 | <a href="https://blogs.vmware.com/tanzu/not-just-smart-profitable-the-top-three-roi-goals-organizations-should-have-for-agentic-ai/" target="_blank">똑똑 할뿐만 아니라 - 보장 가능성 : 상위 3 개의 ROI 목표 조직은 에이전트 AI를 위해 가져야합니다.</a> (<a href="https://blogs.vmware.com/tanzu/" target="_blank">Tanzu</a>)<br>2025-04-16 | <a href="https://blogs.vmware.com/cloud-foundation/2025/04/16/announcing-the-vmware-cloud-foundation-9-0-beta-program/" target="_blank">VMware Cloud Foundation 9.0 베타 프로그램 발표</a> (<a href="https://blogs.vmware.com/cloud-foundation/" target="_blank">Cloud Foundation</a>)<br>2025-04-16 | <a href="https://blogs.vmware.com/cloud-foundation/2025/04/16/run-containers-and-vms-together/" target="_blank">복잡성없이 컨테이너와 VM을 함께 실행하십시오</a> (<a href="https://blogs.vmware.com/cloud-foundation/" target="_blank">Cloud Foundation</a>)<br>2025-04-16 | <a href="https://blogs.vmware.com/cloud-foundation/2025/04/16/vsan-esa-beats-performance-of-top-storage-array-for-large-financial-firm/" target="_blank">VSAN ESA는 대기업 금융 회사를위한 최고의 스토리지 배열의 성능을 이겼습니다.</a> (<a href="https://blogs.vmware.com/cloud-foundation/" target="_blank">Cloud Foundation</a>)<br></div>
+      <br>
+      <div style='border:1px dotted; border-radius:0.1; padding:10px; font-size: 8px;'><table border='1' style='border-collapse: collapse; border: 1px solid black; font-size: 8px;'><tr><th>Product/Component</th><th>CVE ID</th><th>Title</th><th>Severity</th><th>Published Date</th><th>Updated Date</th></tr><tr><td>VMware Aria Suite,VMware ...</td><td><a href='https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25541'>VCDSA25541</a></td><td><a href='https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25541'>VMSA-2025-0006: VMware Aria Operations updates address a local privilege escalation vulnerability (CVE-2025-22231)</a></td><td>HIGH</td><td>2025-04-01</td><td>2025-04-04</td></tr><tr><td>VMware vSphere ESXi</td><td><a href='https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25518'>VCDSA25518</a></td><td><a href='https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25518'>VMSA-2025-0005: VMware Tools for Windows update addresses an authentication bypass vulnerability (CVE-2025-22230)</a></td><td>HIGH</td><td>2025-03-25</td><td>2025-03-25</td></tr><tr><td>VMware Cloud Foundation,V...</td><td><a href='https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25390'>VCDSA25390</a></td><td><a href='https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25390'>VMSA-2025-0004: VMware ESXi, Workstation, and Fusion updates address multiple vulnerabilities (CVE-2025-22224, CVE-2025-22225, CVE-2025-22226)</a></td><td>CRITICAL</td><td>2025-03-04</td><td>2025-04-17</td></tr><tr><td>VMware Tanzu Greenplum</td><td><a href='https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25581'>VTDSA25581</a></td><td><a href='https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25581'>Product Release Advisory - VMware Tanzu Greenplum 6.29.0</a></td><td>CRITICAL</td><td>2025-04-07</td><td>2025-04-07</td></tr><tr><td>VMware Tanzu Greenplum</td><td><a href='https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25580'>VTDSA25580</a></td><td><a href='https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25580'>Product Release Advisory - VMware Tanzu Greenplum Backup and Restore 1.31.0</a></td><td>CRITICAL</td><td>2025-04-07</td><td>2025-04-07</td></tr><tr><td>VMware Tanzu Greenplum</td><td><a href='https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25561'>VTDSA25561</a></td><td><a href='https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25561'>Tanzu Greenplum Streaming Server 2.0.1 Product Release Advisory</a></td><td>CRITICAL</td><td>2025-03-28</td><td>2025-03-31</td></tr><tr><td>VMware Tanzu Greenplum</td><td><a href='https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25565'>VTDSA25565</a></td><td><a href='https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25565'>VMware Tanzu Greenplum command center 6.13.0/7.3.0 Product Release Advisory</a></td><td>CRITICAL</td><td>2025-03-28</td><td>2025-03-28</td></tr><tr><td>VMware Tanzu Greenplum</td><td><a href='https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25562'>VTDSA25562</a></td><td><a href='https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25562'>Tanzu Greenplum Data Copy Utility  2.7.1 Product Release Advisory</a></td><td>HIGH</td><td>2025-03-28</td><td>2025-03-28</td></tr><tr><td>VMware Tanzu Gemfire</td><td><a href='https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25543'>VTDSA25543</a></td><td><a href='https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25543'>Product Release Advisory -VMware Tanzu Gemfire</a></td><td>CRITICAL</td><td>2025-03-26</td><td>2025-03-26</td></tr><tr><td>VMware Tanzu Application ...</td><td><a href='https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25536'>VTDSA25536</a></td><td><a href='https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25536'>Tanzu Security Advisory - CVE-2025-24813</a></td><td>HIGH</td><td>2025-03-25</td><td>2025-03-25</td></tr><tr><td>VMware Tanzu Gemfire</td><td><a href='https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25509'>VTDSA25509</a></td><td><a href='https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25509'>Product Version Release Advisory VMware Tanzu GemFire Management Console Release 1.3.1</a></td><td>CRITICAL</td><td>2025-03-14</td><td>2025-04-17</td></tr><tr><td>VMware Tanzu Gemfire</td><td><a href='https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25506'>VTDSA25506</a></td><td><a href='https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25506'>Product Version Release Advisory VMware Tanzu GemFire 10.0.6</a></td><td>CRITICAL</td><td>2025-03-13</td><td>2025-04-17</td></tr><tr><td>VMware Tanzu Data Service...</td><td><a href='https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25503'>VTDSA25503</a></td><td><a href='https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25503'>Product Version Release Advisory VMware Tanzu Valkey v7.2.6</a></td><td>HIGH</td><td>2025-03-13</td><td>2025-04-17</td></tr><tr><td>VMware Tanzu Greenplum</td><td><a href='https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25466'>VTDSA25466</a></td><td><a href='https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/25466'>Product Version Release Advisory VMware Tanzu Greenplum 7.4.0</a></td><td>HIGH</td><td>2025-03-04</td><td>2025-04-17</td></tr></table></div>
+<!-- CVE -->
+      <br>
+      <!-- 이벤트 시작 -->
+      <div style="border:1px dotted; border-radius:0.1; padding:10px; font-size: 12px;"> <!-- non border-radius -->
+        <b><a href="https://sites.google.com/broadcom.com/vcf-ranger-wiki/korea-team/events">Upcoming Events:</a></b><br>
+        2025-08-25(월) | <a href="https://blogs.vmware.com/explore/2024/08/29/save-the-date-for-vmware-explore-2025-las-vegas/">VMware Explore 2025 Las Vegas</a>
+        <br>
+        2025-04-30(수) | VKS SME그룹 Premier 파트너사 오프라인 미팅 @ 에티버스타워 21층 중강당 (10:00-12:00)</a>
+        <br>
+        2025-04-16(수) | <a href="https://docs.google.com/forms/d/e/1FAIpQLScES5i_sKtKg8qgt6AZh3y1xGZxaLDLieTbuL52On0eFmsonQ/viewform">Partner Engineer Bootcamp @ 에티버스타워 21층 대강당 (09:00-17:00)</a>
+        <br>
+        2025-03-27(목) | <a href="https://www.facebook.com/share/p/1PwkxcMdQ7/">VMUG Seoul @ 에티버스타워 21층 대강당 (15:00-17:00)</a> | <a href="https://brcm.tech/vmugseoulvault">세션 자료</a>
+        <br>
+
+      </div>
+      <br>
+      <div align="center" style="padding-top:20px;padding-right:10px;padding-bottom:10px;padding-left:10px">
+        <a href="https://sites.google.com/broadcom.com/vcf-ranger-wiki"> KR VCF Portal </a> |
+        <a href="https://sites.google.com/broadcom.com/vcf-ranger-wiki/internal-pages/pnp-deck-vcfbu-update"> PnP Deck </a> |
+        <a href="https://sites.google.com/broadcom.com/vcf-ranger-wiki/internal-pages/pnp-faq-deck-vcfbu"> PnP FAQ Deck </a> 
+        <br>
+        <a href="https://sites.google.com/broadcom.com/vcf-ranger-wiki/korea-team/gs-update/broadcom-support-portal"> Broadcom Support Portal 메뉴얼 </a> |
+        <a href="https://sites.google.com/broadcom.com/vcf-ranger-wiki/korea-team/employee-guide/hr-benefits"> HR Benefits </a> | 
+        <a href="https://sites.google.com/broadcom.com/vcf-ranger-wiki/korea-team/vmware-korea-labor-management-council-lmc/mom"> 노사협의회 회의록 </a>
+        <br>
+        <a href="https://e-hrok.co.kr"> 연말정산 </a> |
+        <a href="https://sites.google.com/broadcom.com/vcf-ranger-wiki/internal-pages/global-sites"> Global Site Link </a>
+      </div>
+    </div>
+
+    <div style="max-width:90%;margin-left:auto;margin-right:auto;margin-top:20px" class="bullet-point">
+      <ul>
+        <li>조회기준: 최신 날짜 순</li>
+      </ul>
+    </div>
+
+    <div style="max-width:90%;margin-left:auto;margin-right:auto;margin-top:20px" class="bullet-point">
+      <ol>
+        <!-- <li>순서 리스트</li> -->
+      </ol>
+    </div>
+    
+    <!-- 메인 이미지 넣기 -->
+    <div align="center" style="padding-right:0px;padding-left:0px;margin-top:20px" class="full-image">
+      <!-- <img align="center" border="0" src="" alt="Image" title="Image" style="border: 0px; height: auto; width: 100%; display: block;"> -->
+    </div>
+
+    <div style="max-width:100%;margin-left:auto;margin-right:auto;margin-top:20px" class="nomal-paragraph">
+
+      <div style="font-size:8px;margin-top:20px">
+        
 <div style="max-width: 90%; margin: 0 auto;">
 <table style="width: 100%; border-collapse: collapse; margin: 20px auto; background-color: white;">
 <thead>
@@ -457,30 +333,21 @@
 </table>
 </div>
 
-            </div>
-        </div>
-        <footer class="footer">
-            <a href="https://sites.google.com/broadcom.com/vcf-ranger-wiki" class="cta-button">
-                Visit KR VCF Portal
-            </a>
-            <div style="font-size: 12px; color: #666; margin-top: 30px;">
-                <a href="mailto:kor-vcf-ranger.pdl@broadcom.com" style="color: inherit;">
-                    Unsubscribe from emails
-                </a>
-            </div>
-        </footer>
+      </div>
     </div>
-    <script>
-        // 테마 토글 함수
-        function toggleTheme() {
-            const body = document.body;
-            const isDark = body.getAttribute('data-theme') === 'dark';
-            body.setAttribute('data-theme', isDark ? 'light' : 'dark');
-            localStorage.setItem('theme', isDark ? 'light' : 'dark');
-        }
-        // 초기 테마 설정
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        document.body.setAttribute('data-theme', savedTheme);
-    </script>
-</body>
-</html>
+
+  <div align="center" style="padding-top:40px;padding-right:10px;padding-bottom:10px;padding-left:10px">
+    <a href="https://sites.google.com/broadcom.com/vcf-ranger-wiki" style="text-decoration-line: none; display: inline-block; color: rgb(255, 255, 255); background-color: rgb(0, 0, 0); border-radius: 60px; width: auto; border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0); padding: 10px 25px;" target="">Visit KR VCF Portal</a>
+  </div>
+
+  <div style="text-align:center;">
+    <a style="font-size:10px;color:rgb(57, 27, 27)" href="https://groups.google.com" target="_blank">404 Error 발생시 여기서 재인증 해주세요</a>
+  </div>
+
+  <br>
+  <div style="text-align:center;">
+    <a style="font-size:12px;color:silver" href="mailto:kor-vcf-ranger.pdl@broadcom.com?subject=Unsubscribe!&amp;body=I&nbsp;don't&nbsp;want&nbsp;to&nbsp;receive&nbsp;an&nbsp;email&nbsp;from&nbsp;your&nbsp;service!" target="_blank">Unsubscribe from emails</a>
+  </div>
+  
+  </div>
+</div>
